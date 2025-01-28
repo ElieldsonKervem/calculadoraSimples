@@ -1,7 +1,51 @@
 
 const getInputValue = document.querySelector('.displayInput');
 const getBtns = document.querySelectorAll('.btn')
-const btnsArrays = Array.from(getBtns).map((text)=>{
+
+
+function calculator (){
+    return{
+         inicia(){
+            this.cliqueBtn();
+         },
+
+         cliqueBtn(){
+            document.addEventListener('click',(event)=>{
+              const el = event.target
+              
+              if(el.classList.contains('numberBtn') ||  el.classList.contains('operationBtn')){
+                console.log(el)
+                 getInputValue.value += el.innerText
+              }
+              else if(el.classList.contains("clearBtn")){
+                 this.clearBtn()
+              }
+              else if(el.classList.contains('equalBtn')){
+                 this.equalBtn()
+              }
+
+            })
+         },
+
+         clearBtn(){
+            return getInputValue.value = ''
+         },
+         equalBtn(){
+            return getInputValue.value = eval(getInputValue.value)
+         }
+
+    }
+
+}
+//segundo esboço utilizando factory funcition
+
+const newCalculator = calculator();
+
+newCalculator.inicia();
+
+
+
+/* const btnsArrays = Array.from(getBtns).map((text)=>{
     return text.innerHTML
 })
 
@@ -55,3 +99,6 @@ window.addEventListener("click",(e)=>{
     }
     
 })
+ */
+
+//primeiro esboço de codigo do desafio
