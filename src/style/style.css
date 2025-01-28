@@ -1,0 +1,38 @@
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+}
+ul {
+    list-style: none;
+}
+
+input {
+    width: 200px;
+    height: 10px;
+    padding: 20px;
+}
+
+.container-numbers{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    width: 50px;
+    margin-bottom: 6px;
+}
+
+button:hover{
+    background: black;
+    color: white;
+    cursor: pointer;
+}
